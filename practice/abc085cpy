@@ -1,0 +1,21 @@
+def main():
+    N, Y = list(map(int, input().split()))
+
+    I, J, K = -1, -1, -1
+    flag = False
+    for i in range(N+1):
+        for j in range(N+1):
+            if(i+j > N):
+                break
+            total = 10000*i+5000*j+1000*(N-i-j)
+            if total == Y:
+                I, J, K = i, j, (N-i-j)
+                flag = True
+                break
+        if flag == True:
+            break
+    print("{} {} {}".format(I, J, K))
+
+
+if __name__ == '__main__':
+    main()
